@@ -10,42 +10,44 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f5f5f5;
+            background: linear-gradient(to right, #ff0000, #ff7373);
             margin: 0;
+            font-family: 'Georgia', serif;
         }
         .container {
             text-align: center;
         }
-        h1{
-            text-align: center;
-
-        }
         .box {
-            width: 300px;
-            padding: 20px;
+            width: 350px;
+            padding: 25px;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
             transition: box-shadow 0.3s ease-in-out;
+            border: 2px solid #ff3333;
+        }
+        p {
+            font-size: 18px;
+            color: #b30000;
+            font-style: italic;
         }
         textarea {
             width: 100%;
-            height: 100px;
+            height: 120px;
             margin-top: 10px;
             padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            border-radius: 10px;
+            border: 1px solid #ff3333;
             resize: none;
             font-size: 16px;
+            background-color: #ffe6e6;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="box" id="dynamicBox">
-            <p>
-                <h1>A te</h1>
-            la mia migliore amica, il mio porto sicuro, anche se la distanza ci separa. Sei la luce nei miei giorni più bui, la persona che mi ha insegnato il valore dell'amicizia vera. Anche se non abbiamo ancora avuto la possibilità di abbracciarci di persona, ogni messaggio, ogni parola e ogni sorriso che mi regali da lontano hanno reso il nostro legame indissolubile. Non importa quanto la vita possa essere dura, tu sei sempre lì, con il tuo cuore immenso e la tua presenza costante. Sei la persona più forte che io conosca, e so che, qualunque cosa la vita metta sul tuo cammino, riuscirai sempre a superarla. E sai perché? Perché avrai sempre me dalla tua parte, pronto a sostenerti, a incoraggiarti e a ricordarti quanto sei speciale. Grazie per ogni risata, per ogni conforto, per esserci sempre. E conto i giorni fino a quest'estate, quando finalmente potrò guardarti negli occhi e dirti di persona quanto tu sia importante per me.</p>
+            <p>A te, la mia migliore amica, il mio porto sicuro, anche se la distanza ci separa. Sei la luce nei miei giorni più bui, la persona che mi ha insegnato il valore dell'amicizia vera. Anche se non abbiamo ancora avuto la possibilità di abbracciarci di persona, ogni messaggio, ogni parola e ogni sorriso che mi regali da lontano hanno reso il nostro legame indissolubile. Non importa quanto la vita possa essere dura, tu sei sempre lì, con il tuo cuore immenso e la tua presenza costante. Sei la persona più forte che io conosca, e so che, qualunque cosa la vita metta sul tuo cammino, riuscirai sempre a superarla. E sai perché? Perché avrai sempre me dalla tua parte, pronto a sostenerti, a incoraggiarti e a ricordarti quanto sei speciale. Grazie per ogni risata, per ogni conforto, per esserci sempre. E conto i giorni fino a quest'estate, quando finalmente potrò guardarti negli occhi e dirti di persona quanto tu sia importante per me.</p>
             <textarea id="textArea" oninput="adjustShadow()"></textarea>
         </div>
     </div>
@@ -54,7 +56,7 @@
         function adjustShadow() {
             let textLength = document.getElementById("textArea").value.length;
             let shadowSize = Math.min(50, textLength / 2); // Limita l'ombra massima a 50px
-            document.getElementById("dynamicBox").style.boxShadow = `0px 4px ${10 + shadowSize}px rgba(0, 0, 0, 0.2)`;
+            document.getElementById("dynamicBox").style.boxShadow = `0px 6px ${10 + shadowSize}px rgba(0, 0, 0, 0.3)`;
         }
     </script>
 </body>
