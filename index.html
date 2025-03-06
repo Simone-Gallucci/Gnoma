@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Div con Ombra Dinamica</title>
     <style>
+        titolo{
+
+            text-aligne: center;
+            color:red;
+        }
         body {
             display: flex;
             justify-content: center;
@@ -45,21 +50,11 @@
     </style>
 </head>
 <body>
+    <titlo>DEDICA A TE</titlo>
     <div class="container">
         <div class="box" id="dynamicBox">
             <p>A te, la mia migliore amica, il mio porto sicuro, anche se la distanza ci separa. Sei la luce nei miei giorni più bui, la persona che mi ha insegnato il valore dell'amicizia vera. Anche se non abbiamo ancora avuto la possibilità di abbracciarci di persona, ogni messaggio, ogni parola e ogni sorriso che mi regali da lontano hanno reso il nostro legame indissolubile. Non importa quanto la vita possa essere dura, tu sei sempre lì, con il tuo cuore immenso e la tua presenza costante. Sei la persona più forte che io conosca, e so che, qualunque cosa la vita metta sul tuo cammino, riuscirai sempre a superarla. E sai perché? Perché avrai sempre me dalla tua parte, pronto a sostenerti, a incoraggiarti e a ricordarti quanto sei speciale. Grazie per ogni risata, per ogni conforto, per esserci sempre. E conto i giorni fino a quest'estate, quando finalmente potrò guardarti negli occhi e dirti di persona quanto tu sia importante per me.</p>
-            <textarea id="textArea" oninput="adjustShadow()">
-              <p>A te, la mia migliore amica, il mio porto sicuro, anche se la distanza ci separa. Sei la luce nei miei giorni più bui, la persona che mi ha insegnato il valore dell'amicizia vera. Anche se non abbiamo ancora avuto la possibilità di abbracciarci di persona, ogni messaggio, ogni parola e ogni sorriso che mi regali da lontano hanno reso il nostro legame indissolubile. Non importa quanto la vita possa essere dura, tu sei sempre lì, con il tuo cuore immenso e la tua presenza costante. Sei la persona più forte che io conosca, e so che, qualunque cosa la vita metta sul tuo cammino, riuscirai sempre a superarla. E sai perché? Perché avrai sempre me dalla tua parte, pronto a sostenerti, a incoraggiarti e a ricordarti quanto sei speciale. Grazie per ogni risata, per ogni conforto, per esserci sempre. E conto i giorni fino a quest'estate, quando finalmente potrò guardarti negli occhi e dirti di persona quanto tu sia importante per me.</p>
-            </textarea>
         </div>
     </div>
-
-    <script>
-        function adjustShadow() {
-            let textLength = document.getElementById("textArea").value.length;
-            let shadowSize = Math.min(50, textLength / 2); // Limita l'ombra massima a 50px
-            document.getElementById("dynamicBox").style.boxShadow = `0px 6px ${10 + shadowSize}px rgba(0, 0, 0, 0.3)`;
-        }
-    </script>
 </body>
 </html>
