@@ -3,60 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A TE PICCOLA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <title>Div con Ombra Dinamica</title>
     <style>
         body {
-            font-family: 'Merriweather', serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
         }
         .container {
             text-align: center;
-            background-color: #8A2BE2; /* Viola */
+        }
+        .box {
+            width: 300px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
             padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            max-width: 800px;  /* Aumento la larghezza */
-            margin: auto;
-            min-height: 500px;  /* Aumento l'altezza */
-        }
-        h1 {
-            color: #4B0082; /* Viola più scuro per visibilità */
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .heart {
-            font-size: 60px; /* Aumento la dimensione del cuore */
-            color: #FFD700; /* Oro per risaltare */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Effetto luminoso */
-            margin-bottom: 30px; /* Spazio maggiore sotto il cuore */
-        }
-        p {
-            font-size: 20px; /* Aumento la dimensione del testo */
-            color: black;
-            line-height: 1.6;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: none;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <h1>A TE PICCOLA 💜</h1>
-     <div class="heart">💜</div>
     <div class="container">
-        <p>
-            Anche se la vita ci ha separati per ora, so che siamo anime gemelle.  <br>
-            Ci siamo trovati una volta e so che, in qualche modo, ci ritroveremo di nuovo. <br>
-            sei il mio binario, la strada che mi porta a casa, il pezzo che completa il mio viaggio.<br>
-            I nostri cuori parlano la stessa lingua, e anche se il destino ci ha messo alla prova, prima o poi torneremo l’uno dall’altra.<br>
-        </p>
-        <p>
-            Nel frattempo, io sarò sempre qui, al tuo fianco, perché non posso vivere senza di te.<br>
-            Non importa cosa accadrà, non smetterò mai di sostenerti, di proteggerti, di <b>AMARTI</b><br>
-            E questa promessa non ha scadenza: durerà sempre e per sempre.<br>
-            Perché il nostro legame è più forte del tempo, della distanza e di qualsiasi ostacolo.<br>
-            E quando finalmente ci ritroveremo, sarà come se non ci fossimo mai lasciati.
-        </p>
+        <div class="box" id="dynamicBox">
+            <p>Scrivi qualcosa qui:</p>
+            <textarea id="textArea" oninput="adjustShadow()"></textarea>
+        </div>
     </div>
+
+    <script>
+        function adjustShadow() {
+            let textLength = document.getElementById("textArea").value.length;
+            let shadowSize = Math.min(50, textLength / 2); // Limita l'ombra massima a 50px
+            document.getElementById("dynamicBox").style.boxShadow = `0px 4px ${10 + shadowSize}px rgba(0, 0, 0, 0.2)`;
+        }
+    </script>
 </body>
 </html>
